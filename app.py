@@ -3,12 +3,15 @@ import pandas as pd
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
 import pickle
+import joblib
 
 # load the model from disk
+#this one is for model
 filename = 'nlp_model.pkl'
 clf = pickle.load(open(filename, 'rb'))
+#this one is for transformation on newdata
 cv=pickle.load(open('tranform.pkl','rb'))
 app = Flask(__name__)
 
